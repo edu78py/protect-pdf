@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor PDF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="toggle-theme" id="toggle-theme">🌓</button>
+  <div class="container">
+    <h1>Editor de Archivos PDF</h1>
+    <div id="drop-area" class="drop-area">
+      <p>Arrastrá y soltá tus archivos PDF aquí o 
+        <label for="pdf-files" style="color: var(--btn-bg); cursor: pointer;">seleccionalos</label>
+      </p>
+      <input type="file" id="pdf-files" accept="application/pdf" multiple hidden />
+    </div>
+    <div id="file-list"></div>
+    <button id="merge-btn">Unir PDFs</button>
+    <button id="protect-btn" disabled>Proteger contra edición</button>
+    <button id="download-btn" disabled>Descargar PDF combinado</button>
+    <div id="pdf-preview-container" style="margin-top: 2rem; display: none;">
+      <h2>Vista previa del PDF</h2>
+      <iframe id="pdf-preview" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    </div>
+  </div>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
